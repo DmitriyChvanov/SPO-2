@@ -29,6 +29,9 @@ const Hotel_items = sequelize.define("hotel_items",{
 const Fly_items = sequelize.define("fly_items",{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     title: {type: DataTypes.STRING},
+    from: {type: DataTypes.STRING, allowNull: false},
+    where: {type: DataTypes.STRING, allowNull: false},
+    departure: {type: DataTypes.STRING, allowNull: false},
     price: {type: DataTypes.INTEGER}
 })
 
