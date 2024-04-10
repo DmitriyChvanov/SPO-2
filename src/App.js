@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import EarlyBirdsPage from "./pages/EarlyBirds/EarlyBirds";
+import EarlyBirdsPage from "./pages/ToursPage/ToursPage";
 import { routes } from "./routes";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route key={path} path={path} Component={Component} />
           ))}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

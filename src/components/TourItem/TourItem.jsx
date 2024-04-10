@@ -21,14 +21,33 @@ const TourItem = observer(() => {
     getHotels().then((res) => ticket.setHotels(res));
     getFlights().then((res) => ticket.setFlights(res));
   }, []);
+
   const { id } = useParams();
+  let img_url = "";
+
+  switch (id) {
+    case "1":
+      img_url = big_img_1;
+      break;
+    case "2":
+      img_url = big_img_2;
+      break;
+    case "3":
+      img_url = big_img_3;
+      break;
+    case "4":
+      img_url = big_img_4;
+      break;
+    default:
+      img_url = big_img_1;
+  }
 
   return (
     <div className="tourItem">
       <div className="tourItem__container">
         <div className="tourItem__content">
           <div className="tourItem__img">
-            <img src={id} alt="img" />
+            <img src={img_url} alt="img" />
           </div>
           <div className="tourItem__info">
             <div className="tourItem__info__top">
@@ -109,8 +128,10 @@ const TourItem = observer(() => {
                         <br />
                         {flight.title.split(/\s/, 2)[1]}
                       </div>
-                      <div className="tourItem__info__flight__icons">
-                        <img src={hotel1_icons} alt="hotel1_icons"></img>
+                      <div className="tourItem__info__flight__date">
+                        {flight.departure.split(/\s/, 2)[0]}
+                        <br />
+                        {flight.departure.split(/\s/, 2)[1]}
                       </div>
                       <div className="tourItem__info__flight__price">
                         + {flight.price}

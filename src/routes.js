@@ -1,14 +1,14 @@
 import { Component } from "react";
-import EarlyBirdsPage from "./pages/EarlyBirds/EarlyBirds";
-import TourItem from "./components/TourItem/TourItem";
+import ToursPage from "./pages/ToursPage/ToursPage";
+import TourItemPage from "./pages/TourItemPage/TourItemPage";
 
 export const routes = [
   {
     path: "/",
-    Component: EarlyBirdsPage,
+    Component: ToursPage,
   },
   {
     path: "/tour" + "/:id",
-    Component: TourItem,
+    Component: TourItemPage,
   },
 ];
