@@ -6,6 +6,7 @@ import big_img_2 from "../../assets/img/big_img_2.png";
 import big_img_3 from "../../assets/img/big_img_3.png";
 import big_img_4 from "../../assets/img/big_img_4.png";
 
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getFlights, getHotels } from "../../http/axios_requests";
 import { useContext, useEffect, useState } from "react";
@@ -41,6 +42,8 @@ const TourItem = observer(() => {
     default:
       img_url = big_img_1;
   }
+
+  const navigate = useNavigate();
 
   return (
     <div className="tourItem">
@@ -143,7 +146,12 @@ const TourItem = observer(() => {
             </div>
             <div className="tourItem__buy">
               <div>
-                <div className="tourItem__buy__button">далее</div>
+                <div
+                  className="tourItem__buy__button"
+                  onClick={() => navigate("/order")}
+                >
+                  далее
+                </div>
               </div>
               <div className="tourItem__buy__ammount">
                 {ticket._selectedFlight.price + ticket._selectedHotel.price}

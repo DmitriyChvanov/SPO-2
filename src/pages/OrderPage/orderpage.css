@@ -1,0 +1,126 @@
+.OrderPage {
+  margin-top: 18px;
+}
+
+.OrderPage__container {
+  max-width: 1170px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.OrderPage__content {
+  display: flex;
+}
+
+.purchase__content {
+  margin-left: 132px;
+}
+/* ContactForm */
+
+.ContactForm__content {
+  /* display: flex;
+  flex-direction: column; */
+  border: 1px solid #fff;
+  border-radius: 15px;
+  align-items: center;
+}
+.ContactForm__title {
+  margin: 40px 87px 0px 87px;
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 32px;
+}
+
+/* form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 82px;
+}
+
+.form__input {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  min-width: 316px;
+}
+
+.form__input:not(:first-child) {
+  margin-top: 23px;
+}
+
+.form__button {
+  margin-top: 246px;
+  margin-bottom: 68px;
+  padding: 6px 0px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+/* card  */
+
+.card {
+  margin-top: 71px;
+
+  border: 1px solid #fff;
+  border-radius: 15px;
+  width: 466px;
+  height: 277px;
+}
+
+.card__input__number {
+  margin-top: 71px;
+  margin-left: 41px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+
+.card__input__namesurname {
+  margin-top: 94px;
+  margin-left: 41px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  width: 240px;
+}
+
+.card__input__mmyy {
+  margin-left: 10px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  width: 73px;
+}
+
+.card__input__cvv {
+  margin-left: 10px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  width: 44px;
+}
+
+/* choosen__categories */
+
+.choosen__hotel {
+  color: #fff;
+}
+
+.choosen__flight {
+  color: #fff;
+}
