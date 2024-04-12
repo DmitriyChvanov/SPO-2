@@ -37,6 +37,7 @@ const Fly_items = sequelize.define("fly_items",{
 
 const News_item = sequelize.define("news_item",{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    title: {type: DataTypes.STRING,allowNull: false},
     description: {type: DataTypes.STRING,allowNull: false},
     img: {type: DataTypes.STRING, allowNull: false}
 })
