@@ -1,0 +1,29 @@
+.container1{
+        display: flex;
+        justify-content: space-between;
+        flex-shrink: 1;
+        position: relative;
+        width: 1356px;
+        height: 390px;
+        margin-top: 60px;
+}
+div .main-text {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 29px;
+    width: 355px;
+    height: 395px;
+    text-align: right;
+}
+h2 .aha{
+    font-size: 36px;
+}
+
+.container1 .Photo {
+    background: url('../img/photoprelast.png');
+    width: 950px;
+    height: auto;
+    margin-top: 6px;
+    display: grid;
+    justify-self: end;
+}

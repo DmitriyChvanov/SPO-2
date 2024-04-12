@@ -1,0 +1,16 @@
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+    position: relative;
+    width: 1356px;
+    height: 390px;
+}
+.container2 .Cadr {
+    background: url('../img/photolast.png');
+    width: 950px;
+    height: 350px;
+    margin-top: 6px;
+    margin-left: 7px;
+    z-index: 2;
+}
