@@ -6,6 +6,7 @@ export default class TicketStore {
     this._flights = [];
     this._selectedHotel = { price: 0 };
     this._selectedFlight = { price: 0 };
+    this._selectedTicketID = 0;
     makeAutoObservable(this);
   }
 
@@ -25,6 +26,10 @@ export default class TicketStore {
     this._selectedFlight = flight;
   }
 
+  setSelectedTicketID(id) {
+    this._selectedTicketID = id;
+  }
+
   get Hotels() {
     return this._hotels;
   }
@@ -39,5 +44,9 @@ export default class TicketStore {
 
   get SelectedFlight() {
     return this._selectedFlight;
+  }
+
+  get SelectedTicketID() {
+    return this._selectedTicketID;
   }
 }
