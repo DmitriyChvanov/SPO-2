@@ -1,9 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import "./orderpage.css";
 import { Context } from "../..";
+import Modal from "../../components/Modal/Modal";
+import { postContacts, postTicket } from "../../http/axios_requests";
+import { createItem } from "../../http/post";
+import { useNavigate } from "react-router-dom";
 
 const OrderPage = () => {
   const { ticket } = useContext(Context);
+
+  const navigate = useNavigate();
 
   let ticket_name = "";
   switch (ticket._selectedTicketID) {
@@ -20,6 +26,8 @@ const OrderPage = () => {
       ticket_name = "БРАСЛЕТ";
       break;
   }
+
+  const [modalActive, setModalActive] = useState(false);
 
   // form states
   const [number, setNumber] = useState("");
@@ -224,21 +232,31 @@ const OrderPage = () => {
     cardCVVError,
   ]);
   const takeTour = () => {
-    const formDataContacts = new FormData();
-    formDataContacts.append("phone_number", number);
-    formDataContacts.append("first_name", name);
-    formDataContacts.append("last_name", surname);
-    formDataContacts.append("birth_date", date);
-    formDataContacts.append("email", email);
+    setModalActive(true);
 
-    const formDataTicket = new FormData();
-    formDataTicket.append("hotel_id", ticket._selectedHotel.id);
-    formDataTicket.append("fly_id", ticket._selectedFlight.id);
-    formDataTicket.append("ticket_id", ticket._selectedTicketID);
-    formDataTicket.append(
-      "price",
-      ticket._selectedHotel.price + ticket._selectedFlight.price
+    postTicket({
+      hotel_id: ticket._selectedHotel.id,
+      fly_id: ticket._selectedFlight.id,
+      ticket_id: ticket._selectedTicketID,
+      price: ticket._selectedHotel.price + ticket._selectedFlight.price,
+    });
+
+    // postContacts({
+    //   phone_number: number,
+    //   first_name: name,
+    //   last_name: surname,
+    //   birth_date: date,
+    //   email: email,
+    // });
+
+    setTimeout(
+      function () {
+        setModalActive(false);
+        navigate("/success");
+      }.bind(this),
+      3000
     );
+    setTimeout(1);
   };
   return (
     <div className="OrderPage">
@@ -359,7 +377,7 @@ const OrderPage = () => {
                   className={
                     formValid ? "total__purchase_active" : "total__purchase"
                   }
-                  // onClick={takeTour}
+                  onClick={takeTour}
                 >
                   ГОТОВО
                 </button>
@@ -368,6 +386,7 @@ const OrderPage = () => {
           </div>
         </div>
       </div>
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 };

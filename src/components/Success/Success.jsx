@@ -2,6 +2,7 @@ import "./success.css";
 import { ReactComponent as Youtube } from "../../assets/img/youtube_svg.svg";
 import { ReactComponent as Souncloud } from "../../assets/img/soundcloud_svg.svg";
 import { ReactComponent as Telegram } from "../../assets/img/telegram_svg.svg";
+import QRGenerator from "../QRCodeGenerator/QRCodeGenerator";
 
 const Success = () => {
   return (
@@ -11,7 +12,9 @@ const Success = () => {
           <div className="success__order">
             <div className="success__order__title">Ваш заказ</div>
             <div className="success__order__number">XXX-XXX-XXXX-XXXX</div>
-            <div className="success__order__qr"></div>
+            <div className="success__order__qr">
+              <QRGenerator />
+            </div>
           </div>
           <div className="success__congrats">
             <div className="success__congrats__title">

@@ -11,3 +11,21 @@ export const getFlights = async () => {
   const { data } = await axios({ url: `${API_URL}/fly`, method: "GET" });
   return data;
 };
+
+export const postTicket = async (ticket) => {
+  const { data } = await axios({
+    url: `${API_URL}/ticket`,
+    method: "POST",
+    data: ticket,
+  });
+  return data;
+};
+
+export const postContacts = async (contacts) => {
+  const { data } = await axios({
+    url: `${API_URL}/contacts`,
+    method: "POST",
+    data: contacts,
+  });
+  return data;
+};
