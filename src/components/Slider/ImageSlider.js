@@ -3,11 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Slider.css";
 
-import image1 from "../../assets/img/omg1.png";
-import image2 from "../../assets/img/omg2.png";
-import image3 from "../../assets/img/omg3.png";
-import image4 from "../../assets/img/omg4.png";
-import image5 from "../../assets/img/omg5.png";
 import { getNews } from "../../http/axios_requests";
 import { useContext } from "react";
 import { Context } from "../..";
@@ -22,12 +17,12 @@ import { useEffect } from "react";
 // ];
 
 const ImageCarousel = () => {
+  const [news, setNews] = useState([]);
   const { ticket } = useContext(Context);
 
   useEffect(() => {
-    getNews().then((res) => ticket.setNews(res));
+    getNews().then((res) => setNews(res));
   }, []);
-  console.log(ticket._news[0]);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -47,7 +42,7 @@ const ImageCarousel = () => {
         selectedItem={activeIndex}
         onChange={onChange}
       >
-        {ticket._news.map((news, index) => (
+        {news.map((news, index) => (
           <div key={news.id} className="carousel-item">
             <img
               src={"http://localhost:5000/" + news.img}

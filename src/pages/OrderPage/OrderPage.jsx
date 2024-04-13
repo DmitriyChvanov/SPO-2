@@ -233,6 +233,8 @@ const OrderPage = () => {
   const takeTour = () => {
     setModalActive(true);
 
+    ticket._orderID = "randomizer";
+
     postTicket({
       hotel_id: ticket._selectedHotel.id,
       fly_id: ticket._selectedFlight.id,
