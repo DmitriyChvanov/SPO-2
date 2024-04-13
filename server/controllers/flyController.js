@@ -2,9 +2,9 @@ const {Fly_items} = require("../models/models")
 
 class flyController {
     async create(req,res){
-        const {title, price} = req.body
+        const {title,from, where, departure, price} = req.body
 
-        const fly_items = await Fly_items.create({title, price})
+        const fly_items = await Fly_items.create({title, from, where, departure, price})
 
         return res.json(fly_items)
     }
