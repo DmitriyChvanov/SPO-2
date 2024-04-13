@@ -40,7 +40,7 @@ const Tours = () => {
           <div
             className="tour"
             onClick={() => {
-              navigate("tour" + "/" + 2);
+              navigate("/tour" + "/" + 2);
               ticket.setSelectedTicketID(2);
             }}
           >
@@ -61,7 +61,7 @@ const Tours = () => {
           <div
             className="tour"
             onClick={() => {
-              navigate("tour" + "/" + 3);
+              navigate("/tour" + "/" + 3);
               ticket.setSelectedTicketID(3);
             }}
           >
@@ -84,7 +84,7 @@ const Tours = () => {
               className="tour__img"
               src={bracelet_img}
               onClick={() => {
-                navigate("tour" + "/" + 1);
+                navigate("/tour" + "/" + 1);
                 ticket.setSelectedTicketID(4);
               }}
               alt="bracelet_img"
