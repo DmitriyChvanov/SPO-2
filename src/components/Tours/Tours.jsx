@@ -19,7 +19,7 @@ const Tours = () => {
           <div
             className="tour"
             onClick={() => {
-              navigate("tour" + "/" + 1);
+              navigate("/tour" + "/" + 1);
               ticket.setSelectedTicketID(1);
             }}
           >

@@ -26,7 +26,7 @@ const QRGenerator = () => {
   return (
     <div>
       <div className="white">
-        <QRCode value={name} />
+        <QRCode value="1234-5678-910-121" />
       </div>
     </div>
   );

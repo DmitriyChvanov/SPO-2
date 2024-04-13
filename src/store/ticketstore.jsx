@@ -4,6 +4,7 @@ export default class TicketStore {
   constructor() {
     this._hotels = [];
     this._flights = [];
+    this._news = [];
     this._selectedHotel = { price: 0 };
     this._selectedFlight = { price: 0 };
     this._selectedTicketID = 0;
@@ -16,6 +17,10 @@ export default class TicketStore {
 
   setFlights(flights) {
     this._flights = flights;
+  }
+
+  setNews(news) {
+    this._news = news;
   }
 
   setSelectedHotel(hotel) {
@@ -36,6 +41,10 @@ export default class TicketStore {
 
   get Flights() {
     return this._flights;
+  }
+
+  get News() {
+    return this._news;
   }
 
   get SelectedHotel() {

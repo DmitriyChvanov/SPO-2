@@ -12,6 +12,11 @@ export const getFlights = async () => {
   return data;
 };
 
+export const getNews = async () => {
+  const { data } = await axios({ url: `${API_URL}/news`, method: "GET" });
+  return data;
+};
+
 export const postTicket = async (ticket) => {
   const { data } = await axios({
     url: `${API_URL}/ticket`,

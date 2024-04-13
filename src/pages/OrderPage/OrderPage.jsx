@@ -3,7 +3,6 @@ import "./orderpage.css";
 import { Context } from "../..";
 import Modal from "../../components/Modal/Modal";
 import { postContacts, postTicket } from "../../http/axios_requests";
-import { createItem } from "../../http/post";
 import { useNavigate } from "react-router-dom";
 
 const OrderPage = () => {
