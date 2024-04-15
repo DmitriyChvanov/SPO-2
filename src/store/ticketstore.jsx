@@ -8,7 +8,12 @@ export default class TicketStore {
     this._selectedHotel = { price: 0 };
     this._selectedFlight = { price: 0 };
     this._selectedTicketID = 0;
+    this._orderID = '';
     makeAutoObservable(this);
+  }
+
+  setOrderID(order_id) {
+    this._orderID = order_id
   }
 
   setHotels(hotels) {
@@ -57,5 +62,9 @@ export default class TicketStore {
 
   get SelectedTicketID() {
     return this._selectedTicketID;
+  }
+
+  get OrderID() {
+    return this._orderID;
   }
 }

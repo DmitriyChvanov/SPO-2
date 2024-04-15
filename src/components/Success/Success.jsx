@@ -3,15 +3,22 @@ import { ReactComponent as Youtube } from "../../assets/img/youtube_svg.svg";
 import { ReactComponent as Souncloud } from "../../assets/img/soundcloud_svg.svg";
 import { ReactComponent as Telegram } from "../../assets/img/telegram_svg.svg";
 import QRGenerator from "../QRCodeGenerator/QRCodeGenerator";
+import { useContext } from "react";
+import { Context } from "../..";
 
 const Success = () => {
+
+  const {ticket} = useContext(Context) 
+
+
+
   return (
     <div className="success">
       <div className="success__container">
         <div className="success__content">
           <div className="success__order">
             <div className="success__order__title">Ваш заказ</div>
-            <div className="success__order__number">XXX-XXX-XXXX-XXXX</div>
+            <div className="success__order__number">{ticket._orderID}</div>
             <div className="success__order__qr">
               <QRGenerator />
             </div>

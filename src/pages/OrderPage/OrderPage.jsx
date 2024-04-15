@@ -233,11 +233,26 @@ const OrderPage = () => {
   const takeTour = () => {
     setModalActive(true);
 
+    const orderIDgenerator = (length) => {
+      const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        result += charset[randomIndex];
+      }
+      return result;
+    }
+    ticket._orderID = orderIDgenerator(3) + '-' + orderIDgenerator(3) + '-' + orderIDgenerator(4) + '-' + orderIDgenerator(4)
+
+
+
+
     postTicket({
       hotel_id: ticket._selectedHotel.id,
       fly_id: ticket._selectedFlight.id,
       ticket_id: ticket._selectedTicketID,
       price: ticket._selectedHotel.price + ticket._selectedFlight.price,
+      order_id: ticket._orderID,
     });
 
     // postContacts({

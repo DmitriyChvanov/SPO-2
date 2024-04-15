@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import QRCode from "react-qr-code";
 import axios from "axios";
 import { useState } from "react";
 import "./qrcode.css";
+import { Context } from "../..";
 
 const QRGenerator = () => {
+
+  const {ticket} = useContext(Context) 
+
   const [name, setName] = useState("");
   const getTheName = () => {
     axios
@@ -26,7 +30,7 @@ const QRGenerator = () => {
   return (
     <div>
       <div className="white">
-        <QRCode value="1234-5678-910-121" />
+        <QRCode value={ticket._orderID}/>
       </div>
     </div>
   );

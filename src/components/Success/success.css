@@ -32,6 +32,7 @@
   font-weight: 400;
   font-size: 32px;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .success__order__qr {
