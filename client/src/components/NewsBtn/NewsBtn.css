@@ -1,0 +1,11 @@
+.jopa { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #1B2D1F; 
+    width: 100%; 
+    font-size: 24px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    color: #fff;
+}
