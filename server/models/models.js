@@ -13,7 +13,7 @@ const Ticket_item = sequelize.define("ticket_item",{
 
 const Contacts_info = sequelize.define("contacts_info",{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    phone_number: {type: DataTypes.INTEGER},
+    phone_number: {type: DataTypes.STRING},
     first_name: {type: DataTypes.STRING},
     last_name: {type: DataTypes.STRING},
     birth_date: {type: DataTypes.STRING},
@@ -38,6 +38,7 @@ const Fly_items = sequelize.define("fly_items",{
 
 const News_item = sequelize.define("news_item",{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    title: {type: DataTypes.STRING,allowNull: false},
     description: {type: DataTypes.STRING,allowNull: false},
     img: {type: DataTypes.STRING, allowNull: false}
 })
