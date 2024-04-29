@@ -246,6 +246,7 @@ const OrderPage = () => {
 
 
 
+    ticket._orderID = "randomizer";
 
     postTicket({
       hotel_id: ticket._selectedHotel.id,
