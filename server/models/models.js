@@ -7,7 +7,8 @@ const Ticket_item = sequelize.define("ticket_item",{
     fly_id: {type: DataTypes.INTEGER, primaryKey: true},
     contact_info: {type: DataTypes.STRING},
     ticket_id: {type: DataTypes.INTEGER, primaryKey: true},
-    price: {type: DataTypes.INTEGER}
+    price: {type: DataTypes.INTEGER},
+    order_id:{type: DataTypes.STRING},
 })
 
 const Contacts_info = sequelize.define("contacts_info",{
